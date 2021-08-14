@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <GridPane fx:id="gPane" layoutX="14.0" layoutY="14.0" prefHeight="500.0" prefWidth="500.0">
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+      </GridPane>
+      <Button fx:id="btnStart" layoutX="15.0" layoutY="542.0" mnemonicParsing="false" onAction="#handleStart" prefHeight="27.0" prefWidth="267.0" text="Start " />
+      <Button fx:id="btnCord" disable="true" layoutX="204.0" layoutY="741.0" mnemonicParsing="false" onAction="#handlebtnCord" prefHeight="27.0" prefWidth="121.0" text="Add Cordyceps" />
+      <Button fx:id="btnFlu" disable="true" layoutX="204.0" layoutY="590.0" mnemonicParsing="false" onAction="#handlebtnFlu" prefHeight="27.0" prefWidth="121.0" text="Add Flu" />
+      <Button fx:id="btnHiv" disable="true" layoutX="204.0" layoutY="642.0" mnemonicParsing="false" onAction="#handlebtnHiv" prefHeight="27.0" prefWidth="121.0" text="Add HIV" />
+      <Button fx:id="btnCoro" disable="true" layoutX="204.0" layoutY="691.0" mnemonicParsing="false" onAction="#handlebtnCoro" text="Add Coronavirus" />
+      <Slider fx:id="sliderHumid" layoutX="641.0" layoutY="598.0" majorTickUnit="20.0" minorTickCount="1" prefHeight="38.0" prefWidth="162.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Slider fx:id="sliderTemp" layoutX="648.0" layoutY="718.0" prefHeight="26.0" prefWidth="162.0" showTickMarks="true" />
+      <ListView fx:id="lst1" layoutX="541.0" layoutY="73.0" prefHeight="200.0" prefWidth="325.0" />
+      <CheckBox fx:id="check1" layoutX="606.0" layoutY="477.0" mnemonicParsing="false" onAction="#handlecheck1" text="Current" />
+      <CheckBox fx:id="check2" layoutX="752.0" layoutY="477.0" mnemonicParsing="false" onAction="#handlecheck2" text="Total" />
+      <Button fx:id="btnReset" layoutX="309.0" layoutY="542.0" mnemonicParsing="false" onAction="#handlebtnReset" prefHeight="27.0" prefWidth="267.0" text="Reset" />
+      <Button fx:id="btnstopFlu" disable="true" layoutX="354.0" layoutY="590.0" mnemonicParsing="false" onAction="#handlestopFlu" prefHeight="27.0" prefWidth="222.0" text="Introduce Flu Vaccine" />
+      <Button fx:id="btnstopHiv" disable="true" layoutX="354.0" layoutY="642.0" mnemonicParsing="false" onAction="#handlestopHiv" prefHeight="27.0" prefWidth="222.0" text="Introduce HIV Cure" />
+      <Button fx:id="btnstopCoronavirus" disable="true" layoutX="354.0" layoutY="691.0" mnemonicParsing="false" onAction="#handlestopCoronavirus" text="Introduce Coronavirus Treatment" />
+      <Button fx:id="btnstopCordyceps" disable="true" layoutX="354.0" layoutY="741.0" mnemonicParsing="false" onAction="#handlestopCordyceps" prefHeight="27.0" prefWidth="222.0" text="Introduce Cordyceps Cure" />
+      <Label layoutX="541.0" layoutY="43.0" text="Disease" />
+      <Label layoutX="668.0" layoutY="43.0" text="Current Alive" />
+      <Label layoutX="779.0" layoutY="43.0" text="Total Lived" />
+      <Label layoutX="813.0" layoutY="718.0" text="Hot">
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.5827338129496402" startY="0.5179856115107914">
+               <stops>
+                  <Stop color="#ebb2af" />
+                  <Stop color="#e11008" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="608.0" layoutY="718.0" text="Cold">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startY="0.7194244604316546">
+               <stops>
+                  <Stop color="#1512bf" />
+                  <Stop color="#9096eb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="689.0" layoutY="696.0" text="Temperature" />
+      <Label layoutX="694.0" layoutY="573.0" text="Humidity %" />
+      <Label layoutX="17.0" layoutY="585.0" prefHeight="38.0" prefWidth="171.0" text="Flu: Highly Contagious, Easily Treatable" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="637.0" prefHeight="38.0" prefWidth="171.0" text="HIV: Only Spreadable Through Body Fluids, Not Easily Treatable" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="683.0" prefHeight="38.0" prefWidth="171.0" text="Coronavirus: Very Contagious, Not Easily Treatable" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="727.0" prefHeight="57.0" prefWidth="171.0" text="Cordyceps Brain Infection, Extremely Contagious, No Treatment, Will Actively Target And Kill Other Diseases" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="barGraph" animated="false" layoutX="526.0" layoutY="278.0" prefHeight="185.0" prefWidth="338.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>
